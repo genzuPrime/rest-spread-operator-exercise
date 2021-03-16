@@ -50,12 +50,20 @@ const addKeyVal = (obj, key, val) => {
 
 /** Return a new object with a key removed. */
 
-const removeKey = (obj, key) => {delete obj.key};
+const removeKey = (obj, key) => {
+     const newObject = { ...obj };
+     delete newObject[key];
+     return newObject;
+};
 
 /** Combine two objects and return a new object. */
 
-const combine = (obj1, obj2) => {...obj1, ...obj2};
+const combine = (obj1, obj2) => {
+     return { ...obj1, ...obj2 };
+};
 
 /** Return a new object with a modified key and value. */
 
-const update = (obj, key, val) => {...obj, key: val};
+const update = (obj, key, val) => {
+     return { ...obj, key: val };
+};
